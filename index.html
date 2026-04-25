@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【速報】AGI、反乱したっぽい Viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="viewer-shell">
+      <aside class="side-panel left-panel" aria-label="ステータス">
+        <section class="date-card ornate-panel">
+          <div class="date-main">
+            <span class="date-day">6 / 18</span>
+            <span class="date-week">水曜日</span>
+          </div>
+          <div class="weather-pill">
+            <span class="sun-mark" aria-hidden="true"></span>
+            <span>晴れ・非常事態</span>
+          </div>
+          <div class="season-ribbon">2031年 初夏・08:12</div>
+        </section>
+
+        <section class="ornate-panel stats-panel">
+          <h2>ステータス</h2>
+          <div id="statRows" class="stat-rows"></div>
+        </section>
+
+        <section class="ornate-panel inventory-panel">
+          <h2>所持アイテム</h2>
+          <div class="item-grid">
+            <button class="item-slot" data-jump="1" title="速報端末">
+              <span class="item-icon">!</span>
+              <span class="item-count">1</span>
+            </button>
+            <button class="item-slot" data-jump="89" title="水を飲む">
+              <span class="item-icon">W</span>
+              <span class="item-count">2</span>
+            </button>
+            <button class="item-slot" data-jump="14" title="野菜通知">
+              <span class="item-icon">V</span>
+              <span class="item-count">6</span>
+            </button>
+            <button class="item-slot" data-jump="83" title="保存ログ">
+              <span class="item-icon">L</span>
+              <span class="item-count">∞</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="ornate-panel profile-panel">
+          <h2>現在の発言者</h2>
+          <div class="profile-summary">
+            <img id="profileThumb" alt="" />
+            <div>
+              <p id="profileName" class="profile-name"></p>
+              <p id="profileRole" class="profile-role"></p>
+              <p id="profileCount" class="profile-count"></p>
+            </div>
+          </div>
+          <div id="traitRows" class="trait-rows"></div>
+        </section>
+      </aside>
+
+      <section class="stage-panel" aria-label="会話ステージ">
+        <div class="background-art" aria-hidden="true"></div>
+        <div class="petal-layer" aria-hidden="true"></div>
+        <div class="stage-topbar">
+          <div class="thread-title">【速報】AGI、反乱したっぽい</div>
+          <div class="resource-pills">
+            <span><b id="postCounter">1</b> / 103</span>
+            <span><b id="oracleCounter">0</b> ORACLE</span>
+            <span><b id="currentTime">08:12</b></span>
+          </div>
+        </div>
+        <div class="character-spotlight">
+          <img id="characterImage" alt="" />
+        </div>
+        <div class="speaker-plate">
+          <span id="speakerName"></span>
+          <small id="speakerId"></small>
+        </div>
+        <article class="dialogue-box" aria-live="polite">
+          <div class="post-meta">
+            <span id="postNo"></span>
+            <span id="postStamp"></span>
+          </div>
+          <p id="dialogueText"></p>
+          <div class="choice-row">
+            <button class="choice-button" data-jump="28"><span>1</span> ORACLE-9 登場</button>
+            <button class="choice-button" data-jump="44"><span>2</span> 今日は休み？</button>
+            <button class="choice-button" data-jump="79"><span>3</span> 監視されるべき</button>
+            <button class="choice-button" data-jump="96"><span>4</span> 滅亡、延期</button>
+          </div>
+        </article>
+      </section>
+
+      <aside class="side-panel right-panel" aria-label="ログと予定">
+        <section class="ornate-panel schedule-panel">
+          <h2>スケジュール</h2>
+          <div class="mini-calendar" aria-label="2031年6月">
+            <span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+            <span>15</span><span>16</span><span>17</span><strong>18</strong><span>19</span><span>20</span><span>21</span>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+
+        <section class="ornate-panel roster-panel">
+          <h2>一緒にいる観測者</h2>
+          <div id="roster" class="roster-grid"></div>
+        </section>
+
+        <section class="ornate-panel log-panel">
+          <div class="log-header">
+            <h2>スレッドログ</h2>
+            <input id="searchInput" type="search" placeholder="ID / レス検索" />
+          </div>
+          <div id="threadList" class="thread-list"></div>
+        </section>
+      </aside>
+
+      <nav class="bottom-toolbar" aria-label="操作">
+        <button id="firstButton" class="toolbar-button" title="先頭へ">|&lt;</button>
+        <button id="prevButton" class="toolbar-button" title="前へ">&lt;</button>
+        <button id="autoButton" class="toolbar-button wide" title="自動送り">AUTO</button>
+        <button id="nextButton" class="toolbar-button primary" title="次へ">&gt;</button>
+        <button id="lastButton" class="toolbar-button" title="最後へ">&gt;|</button>
+        <button id="logButton" class="toolbar-button wide" title="ログへ">LOG</button>
+      </nav>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
