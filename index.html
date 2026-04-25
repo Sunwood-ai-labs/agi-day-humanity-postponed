@@ -122,6 +122,8 @@
       <nav class="bottom-toolbar" aria-label="操作">
         <button id="firstButton" class="toolbar-button" title="先頭へ">|&lt;</button>
         <button id="prevButton" class="toolbar-button" title="前へ">&lt;</button>
+        <button id="voiceButton" class="toolbar-button wide" title="音声ON/OFF">VOICE</button>
+        <button id="replayButton" class="toolbar-button" title="現在の音声を再生">PLAY</button>
         <button id="autoButton" class="toolbar-button wide" title="自動送り">AUTO</button>
         <button id="nextButton" class="toolbar-button primary" title="次へ">&gt;</button>
         <button id="lastButton" class="toolbar-button" title="最後へ">&gt;|</button>
@@ -129,6 +131,7 @@
       </nav>
     </main>
 
+    <audio id="voiceAudio" preload="auto"></audio>
     <script src="./app.js"></script>
   </body>
 </html>

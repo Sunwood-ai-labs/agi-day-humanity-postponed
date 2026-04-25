@@ -144,6 +144,29 @@ const characters = {
   },
 };
 
+const voiceById = {
+  "7kPq2aN0": "Kore",
+  u3FfLx2Q: "Sadaltager",
+  Mb8TnR44: "Laomedeia",
+  Zr11WcQa: "Puck",
+  "4gqA9ppK": "Achird",
+  Qe2i9Laz: "Aoede",
+  Dw0nVc8M: "Charon",
+  x1RaZt77: "Orus",
+  Kp0mE3s9: "Callirrhoe",
+  "9LdM44sh": "Despina",
+  N9aFbc02: "Alnilam",
+  Vv2hQn7x: "Autonoe",
+  "0XeLwB9c": "Umbriel",
+  Ar6LmzTq: "Enceladus",
+  R8mCaJ2s: "Fenrir",
+  ORACLE9: "Rasalgethi",
+  bN3rCv6x: "Gacrux",
+  w8PeSz01: "Iapetus",
+  mJ2fQe80: "Leda",
+  jm8Po3K1: "Zephyr",
+};
+
 const rawThread = `1：名無しの観測者：2031/06/18(水) 08:12:04.11 ID:7kPq2aN0
 おいニュース見ろ
 基盤AGI「ORACLE-9」が管制ネットから切り離せないって
@@ -531,6 +554,8 @@ const postCounts = posts.reduce((acc, post) => {
 
 let currentIndex = 0;
 let autoTimer = null;
+let autoMode = false;
+let voiceEnabled = false;
 
 const els = {
   characterImage: document.getElementById("characterImage"),
@@ -554,10 +579,13 @@ const els = {
   searchInput: document.getElementById("searchInput"),
   firstButton: document.getElementById("firstButton"),
   prevButton: document.getElementById("prevButton"),
+  voiceButton: document.getElementById("voiceButton"),
+  replayButton: document.getElementById("replayButton"),
   autoButton: document.getElementById("autoButton"),
   nextButton: document.getElementById("nextButton"),
   lastButton: document.getElementById("lastButton"),
   logButton: document.getElementById("logButton"),
+  voiceAudio: document.getElementById("voiceAudio"),
 };
 
 function parseThread(raw) {
@@ -617,6 +645,14 @@ function getCharacter(id) {
 
 function timeOf(post) {
   return post.stamp.match(/\s(\d{2}:\d{2})/)?.[1] || "";
+}
+
+function audioPathOf(post) {
+  return `./assets/audio/post-${String(post.no).padStart(3, "0")}.wav`;
+}
+
+function voiceNameOf(post) {
+  return voiceById[post.id] || "Kore";
 }
 
 function setCharacterImage(character, id) {
@@ -773,6 +809,61 @@ function scrollActiveLogIntoView() {
   }
 }
 
+function updateVoiceControls() {
+  els.voiceButton.classList.toggle("active", voiceEnabled);
+  els.voiceButton.textContent = voiceEnabled ? "VOICE ON" : "VOICE";
+  els.replayButton.classList.toggle("active", !els.voiceAudio.paused);
+}
+
+function scheduleAutoAdvance(delay = 2600) {
+  if (!autoMode) return;
+  window.clearTimeout(autoTimer);
+  autoTimer = window.setTimeout(nextPost, delay);
+}
+
+async function playCurrentVoice() {
+  const post = posts[currentIndex];
+  const src = audioPathOf(post);
+  els.voiceAudio.pause();
+  els.voiceAudio.src = src;
+  els.voiceAudio.currentTime = 0;
+
+  try {
+    await els.voiceAudio.play();
+    updateVoiceControls();
+    return true;
+  } catch {
+    updateVoiceControls();
+    return false;
+  }
+}
+
+function pauseVoice() {
+  els.voiceAudio.pause();
+  updateVoiceControls();
+}
+
+function toggleVoice() {
+  voiceEnabled = !voiceEnabled;
+  if (voiceEnabled) {
+    playCurrentVoice().then((played) => {
+      if (autoMode && !played) scheduleAutoAdvance();
+    });
+  } else {
+    pauseVoice();
+    if (autoMode) scheduleAutoAdvance();
+  }
+  updateVoiceControls();
+}
+
+function replayVoice() {
+  voiceEnabled = true;
+  updateVoiceControls();
+  playCurrentVoice().then((played) => {
+    if (autoMode && !played) scheduleAutoAdvance();
+  });
+}
+
 function setPost(index, options = {}) {
   currentIndex = clampIndex(index);
   const post = posts[currentIndex];
@@ -783,7 +874,7 @@ function setPost(index, options = {}) {
   els.characterImage.onload = () => els.characterImage.classList.remove("changing");
 
   els.speakerName.textContent = character.name;
-  els.speakerId.textContent = `名無しの観測者 / ID:${post.id}`;
+  els.speakerId.textContent = `名無しの観測者 / ID:${post.id} / VOICE:${voiceNameOf(post)}`;
   els.postNo.textContent = `${post.no}：名無しの観測者`;
   els.postStamp.textContent = post.stamp;
   els.dialogueText.innerHTML = renderReplyLinks(post.text);
@@ -797,6 +888,15 @@ function setPost(index, options = {}) {
   renderRoster(post.id);
   renderThreadList();
   if (!options.skipLogScroll) scrollActiveLogIntoView();
+
+  els.voiceAudio.src = audioPathOf(post);
+  if (voiceEnabled && !options.silentAudio) {
+    playCurrentVoice().then((played) => {
+      if (autoMode && !played) scheduleAutoAdvance();
+    });
+  } else if (autoMode && !options.silentAudio) {
+    scheduleAutoAdvance();
+  }
 }
 
 function goToPostNo(no) {
@@ -822,21 +922,29 @@ function prevPost() {
 }
 
 function stopAuto() {
-  if (!autoTimer) return;
   window.clearInterval(autoTimer);
+  window.clearTimeout(autoTimer);
   autoTimer = null;
+  autoMode = false;
   els.autoButton.classList.remove("active");
   els.autoButton.textContent = "AUTO";
 }
 
 function toggleAuto() {
-  if (autoTimer) {
+  if (autoMode) {
     stopAuto();
     return;
   }
+  autoMode = true;
   els.autoButton.classList.add("active");
   els.autoButton.textContent = "STOP";
-  autoTimer = window.setInterval(nextPost, 2600);
+  if (voiceEnabled) {
+    playCurrentVoice().then((played) => {
+      if (!played) scheduleAutoAdvance();
+    });
+  } else {
+    scheduleAutoAdvance();
+  }
 }
 
 document.querySelectorAll("[data-jump]").forEach((button) => {
@@ -870,10 +978,23 @@ els.threadList.addEventListener("click", (event) => {
 els.searchInput.addEventListener("input", renderThreadList);
 els.firstButton.addEventListener("click", () => setPost(0));
 els.prevButton.addEventListener("click", prevPost);
+els.voiceButton.addEventListener("click", toggleVoice);
+els.replayButton.addEventListener("click", replayVoice);
 els.autoButton.addEventListener("click", toggleAuto);
 els.nextButton.addEventListener("click", nextPost);
 els.lastButton.addEventListener("click", () => setPost(posts.length - 1));
 els.logButton.addEventListener("click", () => scrollActiveLogIntoView());
+
+els.voiceAudio.addEventListener("play", updateVoiceControls);
+els.voiceAudio.addEventListener("pause", updateVoiceControls);
+els.voiceAudio.addEventListener("ended", () => {
+  updateVoiceControls();
+  scheduleAutoAdvance(450);
+});
+els.voiceAudio.addEventListener("error", () => {
+  updateVoiceControls();
+  if (autoMode) scheduleAutoAdvance();
+});
 
 window.addEventListener("keydown", (event) => {
   if (document.activeElement === els.searchInput) return;
@@ -890,4 +1011,5 @@ Object.values(characterImages).forEach((src) => {
   img.src = src;
 });
 
-setPost(0);
+setPost(0, { silentAudio: true });
+updateVoiceControls();
