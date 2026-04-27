@@ -261,6 +261,7 @@ button {
 .item-slot:hover,
 .toolbar-button:hover,
 .choice-button:hover,
+.repo-link:hover,
 .roster-card:hover {
   filter: brightness(1.04);
   transform: translateY(-1px);
@@ -376,10 +377,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
 .thread-title {
+  flex: 1 1 230px;
+  min-width: 0;
   max-width: 58%;
   padding: 9px 16px;
   overflow: hidden;
@@ -397,11 +401,14 @@ button {
 
 .resource-pills {
   display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
   gap: 9px;
+  justify-content: flex-end;
   min-width: 0;
 }
 
-.resource-pills span {
+.resource-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -414,6 +421,17 @@ button {
   box-shadow: 0 6px 18px rgba(92, 54, 82, 0.16);
   font-size: 14px;
   font-weight: 700;
+}
+
+.repo-link {
+  color: #6f2c58;
+  text-decoration: none;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.repo-link:focus-visible {
+  outline: 3px solid rgba(99, 205, 222, 0.72);
+  outline-offset: 3px;
 }
 
 .resource-pills b {
@@ -822,7 +840,7 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .resource-pills span {
+  .resource-pill {
     min-width: 78px;
   }
 }
@@ -871,10 +889,6 @@ button {
 
   .thread-title {
     max-width: none;
-  }
-
-  .resource-pills {
-    flex-wrap: wrap;
   }
 
   .character-spotlight {
