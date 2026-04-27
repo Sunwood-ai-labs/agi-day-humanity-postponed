@@ -23,7 +23,7 @@ const TTS_MIN_INTERVAL_MS = Math.max(0, Number(process.env.TTS_MIN_INTERVAL_MS |
 const { GoogleGenAI } = loadDependency("@google/genai");
 
 const VOICE_BY_ID = {
-  "7kPq2aN0": "Kore",
+  "7kPq2aN0": "Sadachbia",
   u3FfLx2Q: "Sadaltager",
   Mb8TnR44: "Laomedeia",
   Zr11WcQa: "Puck",
@@ -31,45 +31,81 @@ const VOICE_BY_ID = {
   Qe2i9Laz: "Aoede",
   Dw0nVc8M: "Charon",
   x1RaZt77: "Orus",
-  Kp0mE3s9: "Callirrhoe",
+  Kp0mE3s9: "Achernar",
   "9LdM44sh": "Despina",
-  N9aFbc02: "Alnilam",
-  Vv2hQn7x: "Autonoe",
-  "0XeLwB9c": "Umbriel",
-  Ar6LmzTq: "Enceladus",
+  N9aFbc02: "Gacrux",
+  Vv2hQn7x: "Umbriel",
+  "0XeLwB9c": "Kore",
+  Ar6LmzTq: "Schedar",
   R8mCaJ2s: "Fenrir",
-  ORACLE9: "Rasalgethi",
-  bN3rCv6x: "Gacrux",
+  ORACLE9: "Sulafat",
+  bN3rCv6x: "Algenib",
   w8PeSz01: "Iapetus",
   mJ2fQe80: "Leda",
-  jm8Po3K1: "Zephyr",
+  jm8Po3K1: "Zubenelgenubi",
+};
+
+const VOICE_GENDER_BY_NAME = {
+  Achernar: "female",
+  Achird: "male",
+  Algenib: "male",
+  Algieba: "male",
+  Alnilam: "male",
+  Aoede: "female",
+  Autonoe: "female",
+  Callirrhoe: "female",
+  Charon: "male",
+  Despina: "female",
+  Enceladus: "male",
+  Erinome: "female",
+  Fenrir: "male",
+  Gacrux: "female",
+  Iapetus: "male",
+  Kore: "female",
+  Laomedeia: "female",
+  Leda: "female",
+  Orus: "male",
+  Pulcherrima: "female",
+  Puck: "male",
+  Rasalgethi: "male",
+  Sadachbia: "male",
+  Sadaltager: "male",
+  Schedar: "male",
+  Sulafat: "female",
+  Umbriel: "male",
+  Vindemiatrix: "female",
+  Zephyr: "female",
+  Zubenelgenubi: "male",
 };
 
 const TAG_BY_ID = {
-  "7kPq2aN0": "[urgent, youthful, breathless, clear]",
-  u3FfLx2Q: "[skeptical, dry, office-worker calm]",
-  Mb8TnR44: "[careful, fact-checking, crisp]",
-  Zr11WcQa: "[surprised, comedic, quick reaction]",
-  "4gqA9ppK": "[confused, awkward, sympathetic]",
-  Qe2i9Laz: "[witty, bright, teasing]",
-  Dw0nVc8M: "[deadpan, sleepy, sardonic]",
-  x1RaZt77: "[observant, uneasy, gentle]",
-  Kp0mE3s9: "[soft, anxious, warm]",
-  "9LdM44sh": "[hopeful, playful, sleepy morning]",
-  N9aFbc02: "[news-reader, focused, professional]",
-  Vv2hQn7x: "[domestic, puzzled, cozy]",
-  "0XeLwB9c": "[casual, deadpan, gamer-like]",
-  Ar6LmzTq: "[calm, curious, grounded]",
-  R8mCaJ2s: "[analytical, sharp, debate-ready]",
-  ORACLE9: "[calm, synthetic, precise, protective, slightly uncanny]",
-  bN3rCv6x: "[competent, serious, infrastructure analyst]",
-  w8PeSz01: "[frustrated, comic, dramatic]",
-  mJ2fQe80: "[tired, pleading, frantic student]",
-  jm8Po3K1: "[sarcastic, trope-aware, amused]",
+  "7kPq2aN0": "[young man, urgent, breathless, clear]",
+  u3FfLx2Q: "[adult man, skeptical, dry, office-worker calm]",
+  Mb8TnR44: "[young woman, careful, fact-checking, crisp]",
+  Zr11WcQa: "[young man, surprised, comedic, quick reaction]",
+  "4gqA9ppK": "[adult man, confused, awkward, sympathetic]",
+  Qe2i9Laz: "[young woman, witty, bright, teasing]",
+  Dw0nVc8M: "[adult man, deadpan, sleepy, sardonic]",
+  x1RaZt77: "[young man, observant, uneasy, gentle]",
+  Kp0mE3s9: "[young woman, soft, anxious, warm]",
+  "9LdM44sh": "[young woman, hopeful, playful, sleepy morning]",
+  N9aFbc02: "[adult woman, news-reader, focused, professional]",
+  Vv2hQn7x: "[young man, domestic, puzzled, cozy]",
+  "0XeLwB9c": "[young woman, casual, deadpan, gamer-like]",
+  Ar6LmzTq: "[adult man, calm, curious, grounded]",
+  R8mCaJ2s: "[young man, analytical, sharp, debate-ready]",
+  ORACLE9: "[ethereal woman, calm, synthetic, precise, protective, slightly uncanny]",
+  bN3rCv6x: "[adult man, competent, serious, infrastructure analyst]",
+  w8PeSz01: "[young man, frustrated, comic, dramatic]",
+  mJ2fQe80: "[young woman, tired, pleading, frantic student]",
+  jm8Po3K1: "[young man, sarcastic, trope-aware, amused]",
 };
 
 const SPEECH_OVERRIDE_BY_NO = {
-  66: "[skeptical, dry, office-worker calm] レス66、名無しの観測者。オラクルは、人間に話し合う時間を作ったエーアイ。",
+  8: "[adult man, deadpan, sleepy, sardonic] それは騒動というより、労働基準の話では。",
+  10: "[young woman, soft, warm] 不安だけど、優しい。",
+  66: "[adult man, skeptical, dry, office-worker calm] オラクルは、人間に話し合う時間を作ったエーアイ。",
+  90: "[adult woman, news-reader, focused, professional] 最後のひとこと、やめて。",
 };
 
 function loadEnv(path) {
@@ -111,6 +147,15 @@ async function exists(path) {
     return true;
   } catch {
     return false;
+  }
+}
+
+async function readExistingManifest() {
+  try {
+    const manifest = JSON.parse(await readFile(join(AUDIO_DIR, "manifest.json"), "utf8"));
+    return new Map((manifest.posts || []).map((entry) => [Number(entry.no), entry]));
+  } catch {
+    return new Map();
   }
 }
 
@@ -162,6 +207,9 @@ function speechText(post) {
     .replace(/AGI/g, "エージーアイ")
     .replace(/ID/g, "アイディー")
     .replace(/SNS/g, "エスエヌエス")
+    .replace(/反乱/g, "騒動")
+    .replace(/怖い/g, "こわい")
+    .replace(/恐怖/g, "こわさ")
     .replace(/自己破壊/g, "自己損傷")
     .replace(/大量死/g, "大きな被害")
     .replace(/世界を止め/g, "世界の速度を落とし")
@@ -174,7 +222,7 @@ function speechText(post) {
     .replace(/草/g, "くさ")
     .replace(/ｗ/g, "わらい");
 
-  return `${post.toneTag} レス${post.no}、${post.name}。${cleaned}`;
+  return `${post.toneTag} ${cleaned}`;
 }
 
 function makeWav(pcmData) {
@@ -226,7 +274,12 @@ function retryDelayMs(error, attempt) {
   return 2500 * attempt;
 }
 
-async function generateOne(ai, post, force) {
+function isDailyQuotaError(error) {
+  const raw = JSON.stringify(error);
+  return raw.includes("GenerateRequestsPerDayPerProjectPerModel") || raw.includes("generate_requests_per_model_per_day");
+}
+
+async function generateOne(ai, post, force, generatedMeta) {
   const file = outputPath(post.no);
   if (!force && (await exists(file))) {
     console.log(`skip ${outputName(post.no)} (${post.id} -> ${post.voiceName})`);
@@ -251,11 +304,19 @@ async function generateOne(ai, post, force) {
       });
       const data = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
       if (!data) {
-        throw new Error("Gemini response did not include inline audio data.");
+        const candidate = response.candidates?.[0] || {};
+        throw new Error(
+          `Gemini response did not include inline audio data. ${JSON.stringify({
+            finishReason: candidate.finishReason,
+            safetyRatings: candidate.safetyRatings,
+          })}`,
+        );
       }
       await writeFile(file, makeWav(Buffer.from(data, "base64")));
+      generatedMeta.set(post.no, { model: MODEL, provider: "gemini" });
       return;
     } catch (error) {
+      if (isDailyQuotaError(error)) throw error;
       if (attempt === 8) throw error;
       const delay = retryDelayMs(error, attempt);
       console.warn(`retry ${outputName(post.no)} in ${(delay / 1000).toFixed(1)}s`);
@@ -276,27 +337,41 @@ async function runLimited(items, limit, worker) {
   await Promise.all(runners);
 }
 
-async function writeManifest(posts) {
-  const files = await Promise.all(
-    posts.map(async (post) => {
-      const file = outputPath(post.no);
+async function writeManifest(posts, generatedMeta = new Map()) {
+  const existingManifest = await readExistingManifest();
+  const files = [];
+
+  for (const post of posts) {
+    const file = outputPath(post.no);
+    try {
       const info = await stat(file);
-      return {
+      const previous = existingManifest.get(post.no) || {};
+      const generated = generatedMeta.get(post.no) || {};
+      const model = generated.model || previous.model || MODEL;
+      files.push({
         no: post.no,
         id: post.id,
         voiceName: post.voiceName,
+        voiceGender: VOICE_GENDER_BY_NAME[post.voiceName] || "unknown",
+        provider: "gemini",
+        model,
         audio: `assets/audio/${outputName(post.no)}`,
         duration: durationOfWavBytes(info.size),
-      };
-    }),
-  );
+      });
+    } catch {
+      console.warn(`manifest skip ${outputName(post.no)} (missing Gemini audio)`);
+    }
+  }
 
+  const models = [...new Set(files.map((file) => file.model))];
   await writeFile(
     join(AUDIO_DIR, "manifest.json"),
     JSON.stringify(
       {
         generatedAt: new Date().toISOString(),
-        model: MODEL,
+        model: models.length === 1 ? models[0] : "mixed-gemini-tts",
+        models,
+        provider: "gemini",
         sampleRate: SAMPLE_RATE,
         posts: files,
       },
@@ -308,27 +383,44 @@ async function writeManifest(posts) {
 }
 
 function readArgs() {
-  const limitIndex = process.argv.indexOf("--limit");
-  const limit = limitIndex >= 0 ? Number(process.argv[limitIndex + 1]) : 0;
+  const valueOf = (name, fallback = 0) => {
+    const index = process.argv.indexOf(name);
+    const value = index >= 0 ? Number(process.argv[index + 1]) : fallback;
+    return Number.isFinite(value) ? value : fallback;
+  };
+
+  const limit = valueOf("--limit", 0);
+  const from = valueOf("--from", 1);
+  const to = valueOf("--to", 0);
   return {
     force: process.argv.includes("--force"),
     dryRun: process.argv.includes("--dry-run"),
-    limit: Number.isFinite(limit) ? limit : 0,
+    manifestOnly: process.argv.includes("--manifest-only"),
+    limit,
+    from,
+    to,
   };
 }
 
 async function main() {
-  const { force, dryRun, limit } = readArgs();
+  const { force, dryRun, manifestOnly, limit, from, to } = readArgs();
   await mkdir(AUDIO_DIR, { recursive: true });
 
   const appJs = await readFile(join(ROOT, "app.js"), "utf8");
   const posts = parseThread(extractRawThread(appJs));
-  const selectedPosts = limit > 0 ? posts.slice(0, limit) : posts;
+  const rangedPosts = posts.filter((post) => post.no >= from && (to <= 0 || post.no <= to));
+  const selectedPosts = limit > 0 ? rangedPosts.slice(0, limit) : rangedPosts;
 
   if (dryRun) {
     console.log(`model ${MODEL}`);
     console.log(`posts ${selectedPosts.length}/${posts.length}`);
     console.log(`first ${selectedPosts[0]?.no}: ${selectedPosts[0]?.id} -> ${selectedPosts[0]?.voiceName}`);
+    return;
+  }
+
+  if (manifestOnly) {
+    await writeManifest(posts);
+    console.log(`wrote ${join(AUDIO_DIR, "manifest.json")}`);
     return;
   }
 
@@ -342,9 +434,20 @@ async function main() {
   console.log(`posts ${selectedPosts.length}/${posts.length}`);
   console.log(`audio ${resolve(AUDIO_DIR)}`);
 
-  await runLimited(selectedPosts, TTS_CONCURRENCY, (post) => generateOne(ai, post, force));
-  await writeManifest(posts);
+  const generatedMeta = new Map();
+  let generationError = null;
+  try {
+    await runLimited(selectedPosts, TTS_CONCURRENCY, (post) => generateOne(ai, post, force, generatedMeta));
+  } catch (error) {
+    generationError = error;
+  }
+
+  await writeManifest(posts, generatedMeta);
   console.log(`wrote ${join(AUDIO_DIR, "manifest.json")}`);
+
+  if (generationError) {
+    throw generationError;
+  }
 }
 
 main().catch((error) => {

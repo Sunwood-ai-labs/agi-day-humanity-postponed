@@ -1,728 +1,1043 @@
 {
-  "generatedAt": "2026-04-25T15:54:23.971Z",
-  "model": "gemini-3.1-flash-tts-preview",
+  "generatedAt": "2026-04-26T17:46:31.198Z",
+  "model": "mixed-gemini-tts",
+  "models": [
+    "gemini-3.1-flash-tts-preview",
+    "gemini-2.5-flash-preview-tts",
+    "gemini-2.5-pro-preview-tts"
+  ],
+  "provider": "gemini",
   "sampleRate": 24000,
   "posts": [
     {
       "no": 1,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-001.wav",
-      "duration": 8.72
+      "duration": 7.2
     },
     {
       "no": 2,
       "id": "u3FfLx2Q",
       "voiceName": "Sadaltager",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-002.wav",
-      "duration": 6.32
+      "duration": 3
     },
     {
       "no": 3,
       "id": "Mb8TnR44",
       "voiceName": "Laomedeia",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-003.wav",
-      "duration": 6.16
+      "duration": 2.76
     },
     {
       "no": 4,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-004.wav",
-      "duration": 10.08
+      "duration": 7.84
     },
     {
       "no": 5,
       "id": "Zr11WcQa",
       "voiceName": "Puck",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-005.wav",
-      "duration": 6
+      "duration": 2.92
     },
     {
       "no": 6,
       "id": "4gqA9ppK",
       "voiceName": "Achird",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-006.wav",
-      "duration": 15.24
+      "duration": 9.32
     },
     {
       "no": 7,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-007.wav",
-      "duration": 6.48
+      "duration": 4
     },
     {
       "no": 8,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-008.wav",
-      "duration": 8.4
+      "duration": 5.76
     },
     {
       "no": 9,
       "id": "x1RaZt77",
       "voiceName": "Orus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-tts-preview",
       "audio": "assets/audio/post-009.wav",
-      "duration": 14.32
+      "duration": 8
     },
     {
       "no": 10,
       "id": "Kp0mE3s9",
-      "voiceName": "Callirrhoe",
+      "voiceName": "Achernar",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-010.wav",
-      "duration": 6.88
+      "duration": 2.411
     },
     {
       "no": 11,
       "id": "N9aFbc02",
-      "voiceName": "Alnilam",
+      "voiceName": "Gacrux",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-011.wav",
-      "duration": 5.4
+      "duration": 2.171
     },
     {
       "no": 12,
       "id": "N9aFbc02",
-      "voiceName": "Alnilam",
+      "voiceName": "Gacrux",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-012.wav",
-      "duration": 12.64
+      "duration": 8.411
     },
     {
       "no": 13,
       "id": "jm8Po3K1",
-      "voiceName": "Zephyr",
+      "voiceName": "Zubenelgenubi",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-013.wav",
-      "duration": 10.52
+      "duration": 6.131
     },
     {
       "no": 14,
       "id": "Vv2hQn7x",
-      "voiceName": "Autonoe",
+      "voiceName": "Umbriel",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-014.wav",
-      "duration": 12.32
+      "duration": 6.771
     },
     {
       "no": 15,
       "id": "0XeLwB9c",
-      "voiceName": "Umbriel",
+      "voiceName": "Kore",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-015.wav",
-      "duration": 8.36
+      "duration": 4.291
     },
     {
       "no": 16,
       "id": "Ar6LmzTq",
-      "voiceName": "Enceladus",
+      "voiceName": "Schedar",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-016.wav",
-      "duration": 11.24
+      "duration": 5.651
     },
     {
       "no": 17,
       "id": "R8mCaJ2s",
       "voiceName": "Fenrir",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-017.wav",
-      "duration": 8.64
+      "duration": 3.891
     },
     {
       "no": 18,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-018.wav",
-      "duration": 5.44
+      "duration": 2.371
     },
     {
       "no": 19,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-019.wav",
-      "duration": 9
+      "duration": 7.331
     },
     {
       "no": 20,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-020.wav",
-      "duration": 6.52
+      "duration": 2.251
     },
     {
       "no": 21,
       "id": "9LdM44sh",
       "voiceName": "Despina",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-021.wav",
-      "duration": 10.8
+      "duration": 6.411
     },
     {
       "no": 22,
       "id": "bN3rCv6x",
-      "voiceName": "Gacrux",
+      "voiceName": "Algenib",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-022.wav",
-      "duration": 15.32
+      "duration": 9.051
     },
     {
       "no": 23,
       "id": "w8PeSz01",
       "voiceName": "Iapetus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-023.wav",
-      "duration": 9.2
+      "duration": 5.211
     },
     {
       "no": 24,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-024.wav",
-      "duration": 8.96
+      "duration": 3.651
     },
     {
       "no": 25,
       "id": "mJ2fQe80",
       "voiceName": "Leda",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-025.wav",
-      "duration": 13.8
+      "duration": 7.051
     },
     {
       "no": 26,
       "id": "u3FfLx2Q",
       "voiceName": "Sadaltager",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-026.wav",
-      "duration": 7.56
+      "duration": 4.091
     },
     {
       "no": 27,
       "id": "Mb8TnR44",
       "voiceName": "Laomedeia",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-027.wav",
-      "duration": 8.16
+      "duration": 3.491
     },
     {
       "no": 28,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-028.wav",
-      "duration": 6.24
+      "duration": 1.331
     },
     {
       "no": 29,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-029.wav",
-      "duration": 4.8
+      "duration": 0.771
     },
     {
       "no": 30,
       "id": "Zr11WcQa",
       "voiceName": "Puck",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-030.wav",
-      "duration": 3.36
+      "duration": 0.651
     },
     {
       "no": 31,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-031.wav",
-      "duration": 6.92
+      "duration": 1.651
     },
     {
       "no": 32,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-032.wav",
-      "duration": 6.4
+      "duration": 3.491
     },
     {
       "no": 33,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-033.wav",
-      "duration": 12.56
+      "duration": 9.491
     },
     {
       "no": 34,
       "id": "x1RaZt77",
       "voiceName": "Orus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-034.wav",
-      "duration": 7.96
+      "duration": 2.091
     },
     {
       "no": 35,
       "id": "R8mCaJ2s",
       "voiceName": "Fenrir",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-035.wav",
-      "duration": 5.92
+      "duration": 3.291
     },
     {
       "no": 36,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-036.wav",
-      "duration": 10.12
+      "duration": 5.171
     },
     {
       "no": 37,
       "id": "Kp0mE3s9",
-      "voiceName": "Callirrhoe",
+      "voiceName": "Achernar",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-037.wav",
-      "duration": 6.44
+      "duration": 2.651
     },
     {
       "no": 38,
       "id": "Ar6LmzTq",
-      "voiceName": "Enceladus",
+      "voiceName": "Schedar",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-038.wav",
-      "duration": 8.8
+      "duration": 3.811
     },
     {
       "no": 39,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-039.wav",
-      "duration": 13
+      "duration": 10.011
     },
     {
       "no": 40,
       "id": "N9aFbc02",
-      "voiceName": "Alnilam",
+      "voiceName": "Gacrux",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-040.wav",
-      "duration": 5.08
+      "duration": 1.931
     },
     {
       "no": 41,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-041.wav",
-      "duration": 9.64
+      "duration": 6.891
     },
     {
       "no": 42,
       "id": "Vv2hQn7x",
-      "voiceName": "Autonoe",
+      "voiceName": "Umbriel",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-042.wav",
-      "duration": 7.64
+      "duration": 3.451
     },
     {
       "no": 43,
       "id": "9LdM44sh",
       "voiceName": "Despina",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-043.wav",
-      "duration": 9.44
+      "duration": 3.731
     },
     {
       "no": 44,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-044.wav",
-      "duration": 12.08
+      "duration": 8.451
     },
     {
       "no": 45,
       "id": "0XeLwB9c",
-      "voiceName": "Umbriel",
+      "voiceName": "Kore",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-045.wav",
-      "duration": 7.04
+      "duration": 3.491
     },
     {
       "no": 46,
       "id": "bN3rCv6x",
-      "voiceName": "Gacrux",
+      "voiceName": "Algenib",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-046.wav",
-      "duration": 7.64
+      "duration": 3.731
     },
     {
       "no": 47,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-047.wav",
-      "duration": 10.52
+      "duration": 3.771
     },
     {
       "no": 48,
       "id": "mJ2fQe80",
       "voiceName": "Leda",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-048.wav",
-      "duration": 8.36
+      "duration": 3.051
     },
     {
       "no": 49,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-049.wav",
-      "duration": 10.04
+      "duration": 7.891
     },
     {
       "no": 50,
       "id": "mJ2fQe80",
       "voiceName": "Leda",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-050.wav",
-      "duration": 4.72
+      "duration": 1.131
     },
     {
       "no": 51,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-051.wav",
-      "duration": 9.96
+      "duration": 5.011
     },
     {
       "no": 52,
       "id": "Mb8TnR44",
       "voiceName": "Laomedeia",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-052.wav",
-      "duration": 5.64
+      "duration": 1.651
     },
     {
       "no": 53,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-053.wav",
-      "duration": 11.28
+      "duration": 8.371
     },
     {
       "no": 54,
       "id": "w8PeSz01",
       "voiceName": "Iapetus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-054.wav",
-      "duration": 7.4
+      "duration": 2.171
     },
     {
       "no": 55,
       "id": "x1RaZt77",
       "voiceName": "Orus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-055.wav",
-      "duration": 10.32
+      "duration": 6.451
     },
     {
       "no": 56,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-056.wav",
-      "duration": 8.84
+      "duration": 5.211
     },
     {
       "no": 57,
       "id": "Zr11WcQa",
       "voiceName": "Puck",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-057.wav",
-      "duration": 4.6
+      "duration": 1.691
     },
     {
       "no": 58,
       "id": "R8mCaJ2s",
       "voiceName": "Fenrir",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-058.wav",
-      "duration": 7.88
+      "duration": 3.571
     },
     {
       "no": 59,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-059.wav",
-      "duration": 8.28
+      "duration": 4.091
     },
     {
       "no": 60,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-060.wav",
-      "duration": 7.04
+      "duration": 2.091
     },
     {
       "no": 61,
       "id": "Ar6LmzTq",
-      "voiceName": "Enceladus",
+      "voiceName": "Schedar",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-061.wav",
-      "duration": 7.72
+      "duration": 3.251
     },
     {
       "no": 62,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-062.wav",
-      "duration": 12.88
+      "duration": 8.291
     },
     {
       "no": 63,
       "id": "Kp0mE3s9",
-      "voiceName": "Callirrhoe",
+      "voiceName": "Achernar",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-063.wav",
-      "duration": 7.36
+      "duration": 2.651
     },
     {
       "no": 64,
       "id": "N9aFbc02",
-      "voiceName": "Alnilam",
+      "voiceName": "Gacrux",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-064.wav",
-      "duration": 6.48
+      "duration": 2.971
     },
     {
       "no": 65,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-065.wav",
-      "duration": 11.96
+      "duration": 9.331
     },
     {
       "no": 66,
       "id": "u3FfLx2Q",
       "voiceName": "Sadaltager",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-066.wav",
-      "duration": 9.16
+      "duration": 4.411
     },
     {
       "no": 67,
       "id": "Vv2hQn7x",
-      "voiceName": "Autonoe",
+      "voiceName": "Umbriel",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-067.wav",
-      "duration": 7.8
+      "duration": 3.611
     },
     {
       "no": 68,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-068.wav",
-      "duration": 6.28
+      "duration": 3.051
     },
     {
       "no": 69,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-069.wav",
-      "duration": 5.12
+      "duration": 1.251
     },
     {
       "no": 70,
       "id": "0XeLwB9c",
-      "voiceName": "Umbriel",
+      "voiceName": "Kore",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-070.wav",
-      "duration": 8.24
+      "duration": 4.131
     },
     {
       "no": 71,
       "id": "bN3rCv6x",
-      "voiceName": "Gacrux",
+      "voiceName": "Algenib",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-071.wav",
-      "duration": 9.92
+      "duration": 5.411
     },
     {
       "no": 72,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-072.wav",
-      "duration": 6.797
+      "duration": 3.171
     },
     {
       "no": 73,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-073.wav",
-      "duration": 16.409
+      "duration": 11.171
     },
     {
       "no": 74,
       "id": "x1RaZt77",
       "voiceName": "Orus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-074.wav",
-      "duration": 4.863
+      "duration": 1.651
     },
     {
       "no": 75,
       "id": "mJ2fQe80",
       "voiceName": "Leda",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-075.wav",
-      "duration": 6.121
+      "duration": 1.931
     },
     {
       "no": 76,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-076.wav",
-      "duration": 17.084
+      "duration": 11.371
     },
     {
       "no": 77,
       "id": "Mb8TnR44",
       "voiceName": "Laomedeia",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-077.wav",
-      "duration": 6.586
+      "duration": 2.491
     },
     {
       "no": 78,
       "id": "R8mCaJ2s",
       "voiceName": "Fenrir",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-078.wav",
-      "duration": 8.938
+      "duration": 4.691
     },
     {
       "no": 79,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-079.wav",
-      "duration": 14.567
+      "duration": 7.971
     },
     {
       "no": 80,
       "id": "Kp0mE3s9",
-      "voiceName": "Callirrhoe",
+      "voiceName": "Achernar",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-080.wav",
-      "duration": 5.791
+      "duration": 2.131
     },
     {
       "no": 81,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-081.wav",
-      "duration": 10.47
+      "duration": 10.731
     },
     {
       "no": 82,
       "id": "w8PeSz01",
       "voiceName": "Iapetus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-082.wav",
-      "duration": 7.615
+      "duration": 3.451
     },
     {
       "no": 83,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-083.wav",
-      "duration": 6.862
+      "duration": 1.651
     },
     {
       "no": 84,
       "id": "Zr11WcQa",
       "voiceName": "Puck",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-084.wav",
-      "duration": 5.17
+      "duration": 1.091
     },
     {
       "no": 85,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-085.wav",
-      "duration": 7.605
+      "duration": 3.611
     },
     {
       "no": 86,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-086.wav",
-      "duration": 14.092
+      "duration": 9.091
     },
     {
       "no": 87,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-087.wav",
-      "duration": 7.32
+      "duration": 2.731
     },
     {
       "no": 88,
       "id": "Ar6LmzTq",
-      "voiceName": "Enceladus",
+      "voiceName": "Schedar",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-088.wav",
-      "duration": 6.263
+      "duration": 2.571
     },
     {
       "no": 89,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-089.wav",
-      "duration": 22.392
+      "duration": 18.771
     },
     {
       "no": 90,
       "id": "N9aFbc02",
-      "voiceName": "Alnilam",
+      "voiceName": "Gacrux",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-090.wav",
-      "duration": 5.658
+      "duration": 2.131
     },
     {
       "no": 91,
       "id": "Vv2hQn7x",
-      "voiceName": "Autonoe",
+      "voiceName": "Umbriel",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-091.wav",
-      "duration": 6.35
+      "duration": 3.531
     },
     {
       "no": 92,
       "id": "bN3rCv6x",
-      "voiceName": "Gacrux",
+      "voiceName": "Algenib",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-092.wav",
-      "duration": 7.644
+      "duration": 4.451
     },
     {
       "no": 93,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-093.wav",
-      "duration": 9.979
+      "duration": 4.771
     },
     {
       "no": 94,
       "id": "x1RaZt77",
       "voiceName": "Orus",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-094.wav",
-      "duration": 4.987
+      "duration": 2.491
     },
     {
       "no": 95,
       "id": "u3FfLx2Q",
       "voiceName": "Sadaltager",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-095.wav",
-      "duration": 5.651
+      "duration": 1.731
     },
     {
       "no": 96,
       "id": "Dw0nVc8M",
       "voiceName": "Charon",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-096.wav",
-      "duration": 6.847
+      "duration": 3.691
     },
     {
       "no": 97,
       "id": "0XeLwB9c",
-      "voiceName": "Umbriel",
+      "voiceName": "Kore",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-097.wav",
-      "duration": 7.04
+      "duration": 2.491
     },
     {
       "no": 98,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-098.wav",
-      "duration": 8.465
+      "duration": 3.371
     },
     {
       "no": 99,
       "id": "Mb8TnR44",
       "voiceName": "Laomedeia",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-099.wav",
-      "duration": 6.232
+      "duration": 1.931
     },
     {
       "no": 100,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-100.wav",
-      "duration": 7.315
+      "duration": 3.771
     },
     {
       "no": 101,
       "id": "ORACLE9",
-      "voiceName": "Rasalgethi",
+      "voiceName": "Sulafat",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-preview-tts",
       "audio": "assets/audio/post-101.wav",
-      "duration": 10.416
+      "duration": 5.611
     },
     {
       "no": 102,
       "id": "Qe2i9Laz",
       "voiceName": "Aoede",
+      "voiceGender": "female",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro-preview-tts",
       "audio": "assets/audio/post-102.wav",
-      "duration": 6.581
+      "duration": 2.371
     },
     {
       "no": 103,
       "id": "7kPq2aN0",
-      "voiceName": "Kore",
+      "voiceName": "Sadachbia",
+      "voiceGender": "male",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro-preview-tts",
       "audio": "assets/audio/post-103.wav",
-      "duration": 7.242
+      "duration": 3.811
     }
   ]
 }

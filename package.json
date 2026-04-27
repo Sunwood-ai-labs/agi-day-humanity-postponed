@@ -4,8 +4,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "audio": "node scripts/generate-audio.mjs",
-    "audio:local": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/generate-local-audio.ps1"
+    "audio": "node scripts/generate-audio.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.50.1"

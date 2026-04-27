@@ -145,7 +145,7 @@ const characters = {
 };
 
 const voiceById = {
-  "7kPq2aN0": "Kore",
+  "7kPq2aN0": "Sadachbia",
   u3FfLx2Q: "Sadaltager",
   Mb8TnR44: "Laomedeia",
   Zr11WcQa: "Puck",
@@ -153,18 +153,18 @@ const voiceById = {
   Qe2i9Laz: "Aoede",
   Dw0nVc8M: "Charon",
   x1RaZt77: "Orus",
-  Kp0mE3s9: "Callirrhoe",
+  Kp0mE3s9: "Achernar",
   "9LdM44sh": "Despina",
-  N9aFbc02: "Alnilam",
-  Vv2hQn7x: "Autonoe",
-  "0XeLwB9c": "Umbriel",
-  Ar6LmzTq: "Enceladus",
+  N9aFbc02: "Gacrux",
+  Vv2hQn7x: "Umbriel",
+  "0XeLwB9c": "Kore",
+  Ar6LmzTq: "Schedar",
   R8mCaJ2s: "Fenrir",
-  ORACLE9: "Rasalgethi",
-  bN3rCv6x: "Gacrux",
+  ORACLE9: "Sulafat",
+  bN3rCv6x: "Algenib",
   w8PeSz01: "Iapetus",
   mJ2fQe80: "Leda",
-  jm8Po3K1: "Zephyr",
+  jm8Po3K1: "Zubenelgenubi",
 };
 
 const rawThread = `1：名無しの観測者：2031/06/18(水) 08:12:04.11 ID:7kPq2aN0
@@ -556,6 +556,8 @@ let currentIndex = 0;
 let autoTimer = null;
 let autoMode = false;
 let voiceEnabled = false;
+let audioManifestLoaded = false;
+const audioByPost = new Map();
 
 const els = {
   characterImage: document.getElementById("characterImage"),
@@ -648,11 +650,35 @@ function timeOf(post) {
 }
 
 function audioPathOf(post) {
-  return `./assets/audio/post-${String(post.no).padStart(3, "0")}.wav`;
+  return audioByPost.get(post.no)?.audio || "";
+}
+
+function hasVoiceOf(post) {
+  return Boolean(audioPathOf(post));
 }
 
 function voiceNameOf(post) {
   return voiceById[post.id] || "Kore";
+}
+
+async function loadAudioManifest() {
+  try {
+    const response = await fetch("./assets/audio/manifest.json", { cache: "no-cache" });
+    if (!response.ok) return;
+    const manifest = await response.json();
+    (manifest.posts || []).forEach((entry) => {
+      if (entry.provider !== "gemini") return;
+      audioByPost.set(Number(entry.no), {
+        audio: `./${entry.audio}`,
+        voiceName: entry.voiceName,
+      });
+    });
+  } catch {
+    audioByPost.clear();
+  } finally {
+    audioManifestLoaded = true;
+    updateVoiceControls();
+  }
 }
 
 function setCharacterImage(character, id) {
@@ -810,9 +836,18 @@ function scrollActiveLogIntoView() {
 }
 
 function updateVoiceControls() {
-  els.voiceButton.classList.toggle("active", voiceEnabled);
-  els.voiceButton.textContent = voiceEnabled ? "VOICE ON" : "VOICE";
-  els.replayButton.classList.toggle("active", !els.voiceAudio.paused);
+  const hasVoice = hasVoiceOf(posts[currentIndex]);
+  const voiceReady = audioManifestLoaded && hasVoice;
+  if (!voiceReady) {
+    voiceEnabled = false;
+    els.voiceAudio.pause();
+  }
+
+  els.voiceButton.disabled = !voiceReady;
+  els.replayButton.disabled = !voiceReady;
+  els.voiceButton.classList.toggle("active", voiceEnabled && voiceReady);
+  els.voiceButton.textContent = voiceEnabled && voiceReady ? "VOICE ON" : "VOICE";
+  els.replayButton.classList.toggle("active", voiceReady && !els.voiceAudio.paused);
 }
 
 function scheduleAutoAdvance(delay = 2600) {
@@ -824,6 +859,11 @@ function scheduleAutoAdvance(delay = 2600) {
 async function playCurrentVoice() {
   const post = posts[currentIndex];
   const src = audioPathOf(post);
+  if (!src) {
+    updateVoiceControls();
+    return false;
+  }
+
   els.voiceAudio.pause();
   els.voiceAudio.src = src;
   els.voiceAudio.currentTime = 0;
@@ -844,6 +884,7 @@ function pauseVoice() {
 }
 
 function toggleVoice() {
+  if (!hasVoiceOf(posts[currentIndex])) return;
   voiceEnabled = !voiceEnabled;
   if (voiceEnabled) {
     playCurrentVoice().then((played) => {
@@ -857,6 +898,7 @@ function toggleVoice() {
 }
 
 function replayVoice() {
+  if (!hasVoiceOf(posts[currentIndex])) return;
   voiceEnabled = true;
   updateVoiceControls();
   playCurrentVoice().then((played) => {
@@ -889,8 +931,16 @@ function setPost(index, options = {}) {
   renderThreadList();
   if (!options.skipLogScroll) scrollActiveLogIntoView();
 
-  els.voiceAudio.src = audioPathOf(post);
-  if (voiceEnabled && !options.silentAudio) {
+  const audioSrc = audioPathOf(post);
+  if (audioSrc) {
+    els.voiceAudio.src = audioSrc;
+  } else {
+    els.voiceAudio.pause();
+    els.voiceAudio.removeAttribute("src");
+  }
+  updateVoiceControls();
+
+  if (voiceEnabled && audioSrc && !options.silentAudio) {
     playCurrentVoice().then((played) => {
       if (autoMode && !played) scheduleAutoAdvance();
     });
@@ -1011,5 +1061,6 @@ Object.values(characterImages).forEach((src) => {
   img.src = src;
 });
 
+loadAudioManifest();
 setPost(0, { silentAudio: true });
 updateVoiceControls();
